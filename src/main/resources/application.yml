@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: exposed-sample
+  datasource:
+    url: h2:mem:testdb
+    username: sa
+    password: password
+    driver-class-name: org.h2.Driver
