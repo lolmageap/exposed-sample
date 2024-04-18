@@ -20,14 +20,15 @@ repositories {
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter")
+    implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
 
-    implementation("org.jetbrains.exposed:exposed-spring-boot-starter:0.49.0")
-    implementation("org.jetbrains.exposed:exposed:0.17.14")
     implementation("org.jetbrains.exposed:exposed-core:0.49.0")
-    runtimeOnly("org.jetbrains.exposed:exposed-jdbc:0.49.0")
+    implementation("org.jetbrains.exposed:exposed-dao:0.49.0")
+    implementation("org.jetbrains.exposed:exposed-jdbc:0.49.0")
 
-    runtimeOnly("org.postgresql:postgresql")
+    runtimeOnly("com.h2database:h2")
+//    runtimeOnly("org.postgresql:postgresql")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
