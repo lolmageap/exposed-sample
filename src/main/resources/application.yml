@@ -4,5 +4,5 @@ spring:
   datasource:
     url: h2:mem:testdb
     username: sa
-    password: password
+    password:
     driver-class-name: org.h2.Driver
