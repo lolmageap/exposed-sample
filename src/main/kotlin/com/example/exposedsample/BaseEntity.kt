@@ -3,6 +3,7 @@ package com.example.exposedsample
 import org.jetbrains.exposed.dao.*
 import org.jetbrains.exposed.dao.id.EntityID
 import org.jetbrains.exposed.dao.id.LongIdTable
+import org.jetbrains.exposed.sql.javatime.datetime
 import java.time.LocalDateTime
 
 abstract class BaseLongIdTable(
