@@ -1,8 +1,12 @@
 package com.example.exposedsample.dao
 
-import org.jetbrains.exposed.dao.id.LongIdTable
+import com.example.exposedsample.dao.table.Books
+import org.jetbrains.exposed.dao.LongEntity
+import org.jetbrains.exposed.dao.LongEntityClass
+import org.jetbrains.exposed.dao.id.EntityID
 
-object Book: LongIdTable() {
-    val title = varchar("title", 50)
-    val author = reference("author", Author)
+class Book(id: EntityID<Long>): LongEntity(id) {
+    val title by Books.title
+    val author by Author referencedOn Books.author
+    companion object: LongEntityClass<Book>(Books)
 }

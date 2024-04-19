@@ -1,9 +1,21 @@
 package com.example.exposedsample.dao
 
-import org.jetbrains.exposed.dao.id.LongIdTable
+import com.example.exposedsample.dao.table.Authors
+import org.jetbrains.exposed.dao.LongEntity
+import org.jetbrains.exposed.dao.LongEntityClass
+import org.jetbrains.exposed.dao.id.EntityID
 
-object Author: LongIdTable() {
-    val name = varchar("name", 50)
-    val age = integer("age")
-    val email = varchar("email", 50)
+class Author(id: EntityID<Long>): LongEntity(id) {
+    var name by Authors.name
+    var age by Authors.age
+    var email by Authors.email
+    companion object: LongEntityClass<Author>(Authors) {
+        fun findByNameAndUpdate(
+            name: String,
+            operator: Author.() -> Unit = {},
+        ) =
+            Author.find { Authors.name eq name }.singleOrNull()
+                ?.apply { operator() }
+                ?: throw IllegalArgumentException("Author not found")
+    }
 }
