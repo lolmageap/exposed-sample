@@ -25,6 +25,7 @@ dependencies {
 
     implementation("org.jetbrains.exposed:exposed-core:0.49.0")
     implementation("org.jetbrains.exposed:exposed-dao:0.49.0")
+    implementation("org.jetbrains.exposed:exposed-datetime:0.49.0")
     implementation("org.jetbrains.exposed:exposed-jdbc:0.49.0")
 
     runtimeOnly("com.h2database:h2")
