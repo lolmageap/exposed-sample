@@ -34,7 +34,7 @@ dependencies {
     implementation("org.jetbrains.exposed:exposed-spring-boot-starter:$exposedVersion")
 
     runtimeOnly("com.h2database:h2")
-//    runtimeOnly("org.postgresql:postgresql")
+    runtimeOnly("org.postgresql:postgresql")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 

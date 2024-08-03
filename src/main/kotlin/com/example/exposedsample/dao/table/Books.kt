@@ -1,8 +1,8 @@
 package com.example.exposedsample.dao.table
 
-import org.jetbrains.exposed.dao.id.LongIdTable
+import com.example.exposedsample.BaseLongIdTable
 
-object Books: LongIdTable() {
+object Books: BaseLongIdTable("book", "id") {
     val title = varchar("title", 50)
     val author = reference("author", Authors)
 }
